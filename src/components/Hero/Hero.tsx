@@ -1,4 +1,4 @@
-import { FC, useEffect, useRef, useState } from "react";
+import { FC, useEffect, useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperType, { Autoplay, Navigation, Pagination } from "swiper";
 import "swiper/css";
@@ -16,7 +16,7 @@ const Hero: FC = () => {
     const paginationBullets = document.querySelectorAll(
       ".swiper-pagination-bullet"
     );
-    Array.from(paginationBullets).map((bullet, i) => {
+    Array.from(paginationBullets).forEach((bullet, i) => {
       bullet.addEventListener("click", () => {
         swiperRef.current && swiperRef.current.slideTo(i + 1);
       });

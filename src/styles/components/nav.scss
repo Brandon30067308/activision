@@ -257,13 +257,13 @@
             padding: 0 0 0 32px;
 
             a {
-              width: fit-content;
               color: $secondary;
               cursor: pointer;
-              margin: 0 0 20px 0;
+              padding: 6px 0;
+              margin: 0 0 12px 0;
 
               &:last-child {
-                margin: 0 0 32px 0;
+                margin: 0 0 26px 0;
               }
             }
           }

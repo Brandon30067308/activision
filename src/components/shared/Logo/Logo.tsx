@@ -3,7 +3,7 @@ import activisionLogoWhite from "../../../assets/images/activision_logo_white.pn
 
 const Logo: FC = () => {
   return (
-    <div className="Logo flex">
+    <div className="Logo flex items-center justify-center">
       <img alt="activision_logo_white" src={activisionLogoWhite} />
     </div>
   );
