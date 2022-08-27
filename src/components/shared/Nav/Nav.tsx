@@ -1,8 +1,9 @@
 import { FC, useEffect, useRef, useState } from "react";
-import breakpoints from "../../../breakpoints";
-import useWindowDimensions from "../../../hooks/useWindowDimensions";
 import Logo from "../Logo/Logo";
 import NavMobile from "./NavMobile";
+import { Link } from "react-router-dom";
+import breakpoints from "../../../breakpoints";
+import useWindowDimensions from "../../../hooks/useWindowDimensions";
 
 const Nav: FC = () => {
   const navLinksRef = useRef<Array<string | { [key: string]: string[] }>>([
@@ -32,15 +33,12 @@ const Nav: FC = () => {
 
   useEffect(() => {
     const nav = document.querySelector(".Nav");
-
-    window.addEventListener("load", () => {
-      const scrollY = window.scrollY;
-      if (scrollY >= 480) {
-        nav?.classList?.remove("opaque");
-      } else {
-        nav?.classList?.add("opaque");
-      }
-    });
+    const scrollY = window.scrollY;
+    if (scrollY >= 480) {
+      nav?.classList?.remove("opaque");
+    } else {
+      nav?.classList?.add("opaque");
+    }
 
     window.addEventListener("scroll", () => {
       const scrollY = window.scrollY;
@@ -86,7 +84,7 @@ const Nav: FC = () => {
             {navLinksRef.current.map((link, i) => (
               <li key={`n-l-${i}`} className="nav-link flex items-center">
                 {typeof link === "string" ? (
-                  <a href="/">{link}</a>
+                  <Link to="/">{link}</Link>
                 ) : (
                   <span>{Object.keys(link)[0]}</span>
                 )}
@@ -94,9 +92,9 @@ const Nav: FC = () => {
                   <ul className="flex justify-start items-start">
                     {Object.values(link)[0].map((subLink, i) => (
                       <li key={`s-l-${i}`} className="w-full">
-                        <a href="/" className="w-full">
+                        <Link to="/" className="w-full">
                           {subLink}
-                        </a>
+                        </Link>
                       </li>
                     ))}
                   </ul>

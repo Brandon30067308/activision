@@ -6,18 +6,28 @@ import "./styles/base.scss";
 import Community from "./components/Community/Community";
 import JobBanner from "./components/JobBanner/JobBanner";
 import Footer from "./components/shared/Footer/Footer";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 function App() {
   return (
-    <div className="App">
-      <Nav />
-      <Hero />
-      <Latest />
-      <SupportBanner />
-      <Community />
-      <JobBanner />
-      <Footer />
-    </div>
+    <Router>
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <div className="App">
+              <Nav />
+              <Hero />
+              <Latest />
+              <SupportBanner />
+              <Community />
+              <JobBanner />
+              <Footer />
+            </div>
+          }
+        />
+      </Routes>
+    </Router>
   );
 }
 

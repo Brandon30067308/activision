@@ -1,4 +1,5 @@
 import { Dispatch, FC, useState } from "react";
+import { Link } from "react-router-dom";
 
 interface NavMobileProps {
   open: boolean;
@@ -22,7 +23,7 @@ const NavMobile: FC<NavMobileProps> = ({ open, setOpen, navLinks }) => {
 
             return typeof link === "string" ? (
               <li key={`n-m-i-${i}`} className="nav-item text-base">
-                <a href="/">{link}</a>
+                <Link to="/">{link}</Link>
               </li>
             ) : (
               <li
@@ -46,13 +47,13 @@ const NavMobile: FC<NavMobileProps> = ({ open, setOpen, navLinks }) => {
                   }}
                 >
                   {Object.values(link)[0].map((v, j) => (
-                    <a
-                      href="/"
+                    <Link
+                      to="/"
                       key={`n-m-s-i-${i}-${j}`}
                       className="sub-link text-sm"
                     >
                       {v}
-                    </a>
+                    </Link>
                   ))}
                 </div>
               </li>

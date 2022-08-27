@@ -29,22 +29,36 @@
       display: flex;
       flex-direction: column;
 
-      li {
-        display: flex;
-        align-items: center;
-        font-size: 14px;
-        letter-spacing: 0.25px;
-        line-height: 20px;
-        color: $gray;
-        margin: 0 0 8px 0;
+      a {
+        &:hover {
+          li {
+            color: $secondary;
+          }
 
-        svg.up-from-square {
-          width: 12px;
-          height: 12px;
-          margin: 0 0 0 4px;
+          svg.up-from-square path {
+            fill: $secondary;
+          }
+        }
 
-          path {
-            fill: $gray;
+        li {
+          display: flex;
+          align-items: center;
+          font-size: 14px;
+          letter-spacing: 0.25px;
+          line-height: 20px;
+          color: $gray;
+          margin: 0 0 8px 0;
+          transition: color 0.35s ease;
+
+          svg.up-from-square {
+            width: 12px;
+            height: 12px;
+            margin: 0 0 0 4px;
+
+            path {
+              fill: $gray;
+              transition: fill 0.35s ease;
+            }
           }
         }
       }
