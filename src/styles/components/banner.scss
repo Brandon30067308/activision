@@ -1,0 +1,261 @@
+// Banner - 1
+.SupportBanner {
+  border-top: 1px solid $darkGray;
+  border-bottom: 1px solid $darkGray;
+  color: $secondary;
+  margin: 42px 0;
+
+  & > div {
+    height: 300px;
+    max-width: 2160px;
+    margin: 0 auto;
+    padding: 0 0 0 84px;
+
+    .banner-content {
+      max-width: 280px;
+      padding: 48px 0;
+
+      .banner-heading {
+        margin-bottom: 12px;
+      }
+
+      p {
+        font-weight: 500;
+        line-height: 28px;
+        margin-bottom: 18px;
+      }
+
+      button {
+        min-width: 240px;
+        height: 55px;
+        background: transparent;
+        box-shadow: 0px 0px 1px 1px #ffffffbf inset;
+        font-weight: bold;
+        color: $secondary;
+        border-radius: 4rem;
+        text-transform: uppercase;
+        letter-spacing: 0.25px;
+        transition: all 0.5s ease;
+
+        &:hover {
+          background-color: $opaqueBlue;
+          box-shadow: inset 0 0 0 2px $blue;
+        }
+      }
+    }
+
+    .banner-img {
+      height: 100%;
+
+      img {
+        height: 100%;
+        object-fit: cover;
+        object-position: right;
+      }
+    }
+
+    @media screen and (max-width: 768px) {
+      padding: 0;
+      height: fit-content;
+      flex-direction: column-reverse;
+      align-items: center;
+
+      .banner-content {
+        width: 100%;
+        align-items: center;
+        text-align: center;
+      }
+
+      .banner-img {
+        width: 100%;
+        height: 180px;
+
+        img {
+          width: 100%;
+          object-position: left;
+        }
+      }
+    }
+  }
+}
+
+// Banner - 2
+.JobBanner {
+  height: 370px;
+  border-top: 1px solid $gray;
+  overflow: hidden;
+  padding: 0 0 72px 0;
+  margin: 72px 0 0 0;
+
+  & > div {
+    color: white;
+    background-image: url(../../assets/images/joinus-banner-img-spyro.png);
+    background-position-x: -18vw;
+    background-size: cover;
+    background-repeat: no-repeat;
+    box-shadow: 300px 0px 40px 25px rgba(0, 0, 0, 0.75) inset;
+
+    p {
+      font-weight: 500;
+      line-height: 28px;
+      max-width: 300px;
+      margin-bottom: 16px;
+    }
+
+    button {
+      min-width: 240px;
+      height: 55px;
+      background: transparent;
+      box-shadow: 0px 0px 1px 1px #ffffffbf inset;
+      font-weight: bold;
+      color: $secondary;
+      border-radius: 4rem;
+      text-transform: uppercase;
+      letter-spacing: 0.25px;
+      transition: all 0.5s ease;
+
+      &:hover {
+        background-color: $opaqueBlue;
+        box-shadow: inset 0 0 0 2px $blue;
+      }
+    }
+
+    .main-content {
+      width: 65%;
+      height: 100%;
+      padding: 48px 0 48px 84px;
+      box-shadow: 250px 0px 75px 15px rgba(0, 0, 0, 0.85) inset;
+
+      h2 {
+        font-size: 42px;
+        font-weight: bold;
+        color: $blue;
+        letter-spacing: 0.25px;
+      }
+    }
+
+    .teams {
+      height: 100%;
+      width: 35%;
+      background: $primary;
+      text-transform: uppercase;
+      padding: 48px 84px 48px 0;
+      box-shadow: -45px 0px 45px 40px rgba(0, 0, 0, 0.96);
+
+      h2 {
+        letter-spacing: 0.75px;
+        margin: 0 0 20px -72px;
+      }
+
+      .teams-list {
+        margin: 0 0 0 -72px;
+
+        & > div:nth-child(1) {
+          margin-right: 40px;
+        }
+
+        .team {
+          font-weight: 500;
+          font-size: 14px;
+          letter-spacing: 0.25px;
+          margin: 0 0 8px 0px;
+        }
+      }
+    }
+
+    @media screen and (min-width: 1600px) {
+      & {
+        background-position-x: unset !important;
+      }
+    }
+
+    @media screen and (max-width: 1024px) {
+      & {
+        background-image: none;
+      }
+
+      .main-content {
+        min-height: 300px;
+        background-image: url(../../assets/images/joinus-banner-img-spyro.png);
+        background-position-x: 50%;
+        background-size: cover;
+        background-repeat: no-repeat;
+
+        h2 {
+          font-size: 36px;
+        }
+      }
+
+      .teams {
+        h2 {
+          margin: 0 0 14px 0;
+        }
+
+        .teams-list {
+          width: max-content;
+          flex-direction: column;
+          margin: 0 0 0 0;
+
+          .team {
+            font-size: 11px;
+            line-height: 15px;
+            margin: 0 0 8px 0;
+          }
+        }
+      }
+    }
+
+    @media screen and (max-width: 768px) {
+      flex-direction: column;
+
+      .main-content {
+        width: 100%;
+        margin: 0 0 36px 0;
+      }
+
+      .teams {
+        width: 100%;
+        align-items: center;
+        padding: 0;
+
+        h2 {
+          text-align: center;
+        }
+
+        .content {
+          text-align: center;
+          margin: 0 0 36px 0;
+
+          h2 {
+            width: 100%;
+            text-align: center;
+            font-size: 36px;
+            font-weight: bold;
+            color: $blue;
+            letter-spacing: 0.25px;
+            text-align: center;
+          }
+        }
+
+        .teams-list {
+          width: fit-content;
+          flex-direction: row;
+          justify-content: center;
+
+          & > div {
+            text-align: center;
+          }
+
+          & > div:nth-child(1) {
+            margin-right: 20px;
+          }
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    height: fit-content;
+    padding: 0 0 56px 0;
+  }
+}

@@ -1,0 +1,69 @@
+@font-face {
+  font-family: "DINNextLTPro";
+  font-weight: normal;
+  src: url("./assets/fonts/DINNextLTPro/DINNextLTPro-Regular.ttf");
+}
+
+@font-face {
+  font-family: "DINNextLTPro";
+  font-weight: 500;
+  src: url("./assets/fonts/DINNextLTPro/DINNextLTPro-Medium.ttf");
+}
+
+@font-face {
+  font-family: "DINNextLTPro";
+  font-weight: bold;
+  src: url("./assets/fonts/DINNextLTPro/DINNextLTPro-Bold.ttf");
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  width: 100%;
+}
+
+body {
+  font-family: "DINNextLTPro", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+    "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: subpixel-antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: #000000;
+  line-height: 1;
+  overflow-x: hidden;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style-type: none;
+}
+
+// Swiper override
+.swiper {
+  .swiper-pagination-bullet {
+    cursor: pointer;
+  }
+
+  .swiper-button-prev,
+  .swiper-button-next {
+    &::after,
+    &::after {
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,22 @@
+@import "config";
+@import "utilities";
+@import "buttons";
+
+@import "./components/nav.scss";
+@import "./components/hero.scss";
+@import "./components/latest.scss";
+@import "./components/community.scss";
+@import "./components/banner.scss";
+@import "./components/footer.scss";
+
+.App {
+  width: 100%;
+
+  .Logo {
+    img {
+      object-fit: contain;
+      width: 120px;
+      height: auto;
+    }
+  }
+}

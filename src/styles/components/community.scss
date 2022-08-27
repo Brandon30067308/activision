@@ -1,0 +1,288 @@
+// Community
+.Community {
+  margin: 42px 0;
+  color: $secondary;
+
+  .container {
+    max-width: 1096px;
+
+    .header {
+      margin: 0 0 32px 0;
+
+      .heading {
+        font-weight: 500;
+        text-transform: uppercase;
+      }
+
+      &::after {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 1px;
+        background: $darkGray;
+        margin: 12px 0 0 0;
+      }
+    }
+
+    .slide {
+      position: relative;
+      padding: 16px 0;
+
+      .tagboard-logo {
+        position: absolute;
+        top: 24px;
+        left: 12px;
+        box-shadow: 0px 0px 1px 1px #ffffff80 inset;
+        border-radius: 4px;
+        padding: 0 2px;
+        z-index: 2;
+
+        svg {
+          width: 24px;
+          height: 24px;
+        }
+      }
+
+      .swiper {
+        .swiper-button-prev,
+        .swiper-button-next {
+          background: transparent;
+          color: rgba(179, 182, 184);
+          border: 2px solid rgba(179, 182, 184, 0.5);
+          border-radius: 50%;
+          width: 42px;
+          height: 42px;
+          transition: color 0.35s ease;
+
+          svg {
+            width: 24px;
+            height: 24px;
+          }
+
+          &:hover {
+            color: $secondary;
+          }
+        }
+
+        .swiper-slide {
+          [class^="slide-item"] {
+            position: relative;
+            height: 50vh;
+            overflow: hidden;
+
+            .slide-item-background {
+              position: absolute;
+              width: 100%;
+              height: 100%;
+              top: 0;
+              left: 0;
+              background-size: cover;
+              background-repeat: no-repeat;
+              filter: blur(8px);
+            }
+          }
+
+          .content {
+            position: absolute;
+            top: 0;
+            left: 0;
+            cursor: pointer;
+            overflow: hidden;
+            z-index: 3;
+
+            &.instagram {
+              p {
+                font-weight: 500;
+                color: $gray;
+                letter-spacing: 0.25px;
+                z-index: 3;
+                transition: color 0.35s ease;
+              }
+
+              div {
+                z-index: 3;
+                color: $gray;
+
+                svg {
+                  width: 26px;
+                  height: 26px;
+
+                  path {
+                    transition: fill 0.35s ease;
+                  }
+                }
+              }
+
+              &:hover {
+                p {
+                  color: $secondary;
+                }
+
+                svg path {
+                  fill: $secondary;
+                }
+              }
+            }
+
+            &.twitter {
+              .social {
+                position: absolute;
+                bottom: 24px;
+                left: 0;
+                font-size: 16px;
+                padding: 0 16px;
+
+                .raven-logo {
+                  img {
+                    width: 45px;
+                    height: 45px;
+                    border: 2px solid $opaqueSecondary;
+                    border-radius: 50%;
+                    margin: 0 6px 0 0;
+                    transition: border-color 0.35s ease;
+                  }
+                }
+
+                .social-left {
+                  color: $opaqueSecondary;
+
+                  p {
+                    transition: color 0.35s ease;
+                  }
+
+                  .tw-handle {
+                    margin: 0 0 4px 0;
+                  }
+
+                  .verified-flag {
+                    width: 18px;
+                    height: 18px;
+                    fill: hsl(204, 88%, 65%);
+                    margin: 0 0 0 4px;
+
+                    path {
+                      stroke: $opaqueSecondary;
+                      stroke-width: 2px;
+                      transition: all 0.35s ease;
+                    }
+                  }
+                }
+
+                .social-right {
+                  svg {
+                    width: 24px;
+                    height: 24px;
+
+                    path {
+                      fill: $opaqueSecondary;
+                      transition: fill 0.35s ease;
+                    }
+                  }
+                }
+              }
+
+              &:hover {
+                .raven-logo img {
+                  border: 2px solid $secondary;
+                }
+
+                .verified-flag {
+                  path {
+                    stroke: $secondary;
+                  }
+                }
+
+                .social-left {
+                  color: $secondary;
+                }
+
+                .social-right svg path {
+                  fill: $secondary;
+                }
+              }
+            }
+          }
+
+          .slide-item-1 {
+            .slide-item-background {
+              background-image: url(../../assets/images/cod-warzone-slide.jpg);
+            }
+
+            .content {
+              .social {
+                position: absolute;
+                bottom: 24px;
+                padding: 0 16px;
+              }
+            }
+          }
+
+          .slide-item-2 .slide-item-background {
+            background-image: url(../../assets/images/new-operator-progression-slide.jpg);
+          }
+
+          .slide-item-3 .slide-item-background {
+            background-image: url(../../assets/images/downloads-slide.png);
+          }
+
+          .slide-item-4 {
+            .slide-item-background {
+              background-image: url(../../assets/images/treyarch-photo-slide.jpg);
+              filter: none;
+            }
+
+            .content {
+              justify-content: space-between;
+              align-items: flex-end;
+              padding: 24px 16px;
+            }
+          }
+
+          .slide-item-5 .slide-item-background {
+            background-image: url(../../assets/images/warzone-bug-fixes-slide.png);
+          }
+        }
+      }
+    }
+  }
+
+  @media screen and (min-width: 1600px) {
+    .container {
+      max-width: 80vw;
+    }
+  }
+
+  @media screen and (max-width: 640px) {
+    .container {
+      .header {
+        margin: 0 0 12px 0;
+      }
+
+      .swiper {
+        .swiper-button-prev,
+        .swiper-button-next {
+          width: 36px !important;
+          height: 36px !important;
+
+          & > svg {
+            width: 20px !important;
+            height: 20px !important;
+          }
+        }
+
+        .swiper-slide {
+          .content {
+            &.twitter {
+              .social-right {
+                svg {
+                  width: 20px !important;
+                  height: 20px !important;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,215 @@
+// Hero
+.Hero {
+  .container {
+    position: relative;
+    height: 100vh;
+    min-height: 480px;
+    max-width: 100%;
+    padding: 0;
+
+    .swiper {
+      height: 100%;
+      min-height: 480px;
+
+      .swiper-button-prev,
+      .swiper-button-next {
+        display: none;
+        border: none;
+        background: none;
+      }
+
+      .slide-control {
+        position: absolute;
+        bottom: 25px;
+        left: 50%;
+        transform: translateX(-50%);
+        height: 60px;
+        width: 40%;
+        max-width: 480px;
+        min-width: fit-content;
+        background: #00000080;
+        justify-self: center;
+        border-radius: 4rem;
+        z-index: 2;
+
+        .swiper-pagination {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          position: static !important;
+
+          .swiper-pagination-bullet {
+            width: 10px;
+            height: 10px;
+            background: transparent;
+            border: 2px solid $gray;
+            opacity: 1;
+            margin: 0 20px 0 0 !important;
+
+            &:last-child {
+              margin: 0 !important;
+            }
+          }
+
+          .swiper-pagination-bullet-active {
+            background: $secondary;
+            border: none;
+          }
+        }
+
+        button {
+          height: 100%;
+          width: fit-content;
+          background: none;
+          color: $gray;
+          padding: 0 24px;
+
+          &.button-left {
+            border-radius: 4rem 0 0 4rem;
+          }
+
+          &.button-right {
+            border-radius: 0 4rem 4rem 0;
+          }
+
+          svg {
+            width: 22px;
+            height: 22px;
+            fill: $gray;
+            transition: fill 0.35s ease;
+          }
+
+          &:hover svg {
+            fill: $secondary;
+          }
+        }
+      }
+
+      .swiper-slide {
+        position: relative;
+        height: 100%;
+        min-height: 480px;
+        width: 100%;
+
+        .slide-media {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          left: 0;
+          top: 0;
+          overflow: hidden;
+          z-index: -1;
+          pointer-events: none;
+
+          .slide-video {
+            height: 101%;
+            width: 100%;
+            object-fit: cover;
+          }
+        }
+
+        .slide-content {
+          padding: 142px 36px 120px 36px;
+
+          img {
+            height: auto;
+            max-width: 100%;
+            max-height: 200px;
+            margin: 0 auto 15px;
+          }
+
+          p {
+            max-width: 520px;
+            text-align: center;
+            color: $secondary;
+            font-weight: 500;
+            letter-spacing: 0.25px;
+            line-height: 30px;
+            margin: 0 0 15px 0;
+          }
+
+          .cta-btns {
+            margin: 8px 0 0;
+
+            button {
+              border-radius: 4rem;
+              min-width: 240px;
+              height: 55px;
+              color: $secondary;
+              font-weight: bold;
+              text-transform: uppercase;
+              letter-spacing: 0.25px;
+            }
+
+            .preorder-btn {
+              background-color: $opaqueBlue;
+              padding: 8px 14px;
+              box-shadow: inset 0 0 0 1px $blue;
+              margin: 0 12px 0 0;
+            }
+
+            .visitsite-btn {
+              background: transparent;
+              box-shadow: 0px 0px 1px 1px #ffffffbf inset;
+              transition: all 0.35s ease;
+
+              &:hover {
+                background-color: $opaqueBlue;
+                box-shadow: inset 0 0 0 2px $blue;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    @media screen and (max-width: 768px) {
+      .slide-control {
+        width: 60% !important;
+      }
+    }
+
+    @media screen and (max-width: 640px) {
+      .swiper {
+        .slide-control {
+          .swiper-pagination {
+            & > .swiper-pagination-bullet {
+              width: 8.5px;
+              height: 8.5px;
+              margin: 0 16px 0 0 !important;
+            }
+          }
+
+          button {
+            svg {
+              width: 20px !important;
+              height: 20px !important;
+            }
+          }
+        }
+
+        .swiper-slide {
+          & .slide-content {
+            padding: 142px 16px;
+
+            .logo-container {
+              & > img {
+                max-height: 145px;
+              }
+            }
+
+            .cta-btns {
+              width: 100%;
+              max-width: 560px;
+
+              button {
+                flex: 0.5;
+                min-width: fit-content !important;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
