@@ -26,6 +26,20 @@ function App() {
             </div>
           }
         />
+        <Route
+          path="*"
+          element={
+            <div className="App">
+              <Nav />
+              <Hero />
+              <Latest />
+              <SupportBanner />
+              <Community />
+              <JobBanner />
+              <Footer />
+            </div>
+          }
+        />
       </Routes>
     </Router>
   );
