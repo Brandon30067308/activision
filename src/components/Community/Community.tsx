@@ -33,7 +33,7 @@ const Community: FC = () => {
               viewBox="0 0 50 50"
               version="1.1"
             >
-              <title>hash-t-white</title>
+              <title>Produced with Tagboard</title>
               <desc>Created with Sketch.</desc>
               <defs />
               <g

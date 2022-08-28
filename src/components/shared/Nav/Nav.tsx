@@ -29,30 +29,30 @@ const Nav: FC = () => {
     { support: ["support home", "online services"] },
   ]);
   const [open, setOpen] = useState(false);
+  const [opaque, setOpqaue] = useState(false);
   const { width } = useWindowDimensions();
 
   useEffect(() => {
-    const nav = document.querySelector(".Nav");
     const scrollY = window.scrollY;
     if (scrollY >= 480) {
-      nav?.classList?.remove("opaque");
+      setOpqaue(false);
     } else {
-      nav?.classList?.add("opaque");
+      setOpqaue(true);
     }
 
     window.addEventListener("scroll", () => {
       const scrollY = window.scrollY;
       if (scrollY >= 480) {
-        nav?.classList?.remove("opaque");
+        setOpqaue(false);
       } else {
-        nav?.classList?.add("opaque");
+        setOpqaue(true);
       }
     });
   }, []);
 
   return (
     <nav
-      className={`Nav w-full flex ${
+      className={`Nav w-full flex ${opaque ? "opaque" : ""} ${
         width <= 1024 ? "justify-center" : "justify-between"
       } ${open ? "open" : ""} items-center`}
       style={

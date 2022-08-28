@@ -3,7 +3,7 @@
   border-top: 1px solid $darkGray;
   border-bottom: 1px solid $darkGray;
   color: $secondary;
-  margin: 42px 0;
+  margin: 64px 0;
 
   & > div {
     height: 300px;
@@ -53,8 +53,12 @@
         object-position: right;
       }
     }
+  }
 
-    @media screen and (max-width: 768px) {
+  @media screen and (max-width: 768px) {
+    margin: 56px 0;
+
+    & > div {
       padding: 0;
       height: fit-content;
       flex-direction: column-reverse;
@@ -85,7 +89,7 @@
   border-top: 1px solid $gray;
   overflow: hidden;
   padding: 0 0 72px 0;
-  margin: 72px 0 0 0;
+  margin: 64px 0 0 0;
 
   & > div {
     color: white;
